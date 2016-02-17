@@ -1,0 +1,82 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="localestates.localestates">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <permission
+        android:name="localestates.localestates.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name="application.LocalEstateApplication"
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:parentActivityName=".StartActivity">
+        <activity
+            android:name=".StartActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdvanceSearchActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".SearchResultActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".AdvertActivity"
+            android:label="" >
+        </activity>
+        <activity
+            android:name=".MapActivity"
+            android:label="" >
+        </activity>
+        <activity
+            android:name=".StreetViewActivity"
+            android:label="" >
+        </activity>
+
+        <activity
+            android:name=".AdvertImagesActivity"
+            android:label="" >
+        </activity>
+
+        <activity
+            android:name=".AdvertNotepadActivity"
+            android:label="" >
+        </activity>
+
+        <activity
+            android:name=".FavouriteActivity"
+            android:label="" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCNBVx3m2Q0q2oo4FQhA4UdAyuTaCQ0BRg"/>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="c02b6bb6ec6c7253457181e501a60897ce537fff" />
+    </application>
+
+</manifest>

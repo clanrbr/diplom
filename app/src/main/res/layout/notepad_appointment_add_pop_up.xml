@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/separator0"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey_300" />
+
+                <utils.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_500"
+                    android:textSize="16sp"
+                    android:text="Обява:"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/separator5"
+                android:layout_below="@+id/separator0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <utils.RobotoTextView
+                    android:id="@+id/titleAdvert"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_grey_900"
+                    android:textSize="16sp"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/separator1"
+                android:layout_below="@+id/separator5"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey_300" />
+
+                <utils.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_500"
+                    android:textSize="16sp"
+                    android:text="Бележка:"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/noteText"
+                android:layout_below="@id/separator1"
+                android:textColor="@color/material_lime_700"
+                android:textColorHint="@color/material_lime_900"
+                android:layout_marginLeft="20dp"
+                android:hint="Оставете бележка"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shadowColor="@color/main_color_500"
+                android:lines="5"
+                android:minLines="5"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:id="@+id/separator2"
+                android:layout_below="@+id/noteText"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey_300" />
+
+                <utils.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_500"
+                    android:textSize="16sp"
+                    android:text="Дата на събитието:"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datePickUpBar"
+                android:layout_below="@+id/separator2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/appointmentDatePick"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="0dp"
+                    android:focusable="false"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/material_lime_700"
+                    android:textColorHint="@color/material_lime_900"
+                    android:layout_weight=".5"
+                    android:hint="Дата" />
+
+                <EditText
+                    android:id="@+id/appointmentHourPick"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="0dp"
+                    android:focusable="false"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/material_lime_700"
+                    android:textColorHint="@color/material_lime_900"
+                    android:layout_weight=".5"
+                    android:hint="Час" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/separator3"
+                android:layout_below="@+id/datePickUpBar"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey_300" />
+
+                <utils.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_500"
+                    android:textSize="16sp"
+                    android:text="Телефон:"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+            
+            <EditText
+                android:id="@+id/additionalPhone"
+                android:layout_below="@+id/separator3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="phone"
+                android:hint="Телефон"/>
+
+            <LinearLayout
+                android:id="@+id/contentLine"
+                android:layout_below="@id/additionalPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:background="@drawable/google_cards_background_bottom" >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/main_color_500" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right" >
+
+                    <utils.RobotoTextView
+                        android:id="@+id/deleteAppointmentDialog"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/transparent_button_selector"
+                        android:padding="8dp"
+                        android:text="Изтрий"
+                        android:textColor="@color/main_color_500"
+                        android:textSize="14sp"
+                        app:typeface="robotoMedium" />
+
+                    <utils.RobotoTextView
+                        android:id="@+id/saveAppointmentDialog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/transparent_button_selector"
+                        android:padding="8dp"
+                        android:text="Запази"
+                        android:textColor="@color/main_color_500"
+                        android:textSize="14sp"
+                        app:typeface="robotoMedium" />
+
+                    <utils.RobotoTextView
+                        android:id="@+id/closeAppointmentDialog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/transparent_button_selector"
+                        android:padding="8dp"
+                        android:text="Затвори"
+                        android:textColor="@color/main_color_500"
+                        android:textSize="14sp"
+                        app:typeface="robotoMedium" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

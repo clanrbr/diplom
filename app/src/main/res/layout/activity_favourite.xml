@@ -1,0 +1,55 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <include android:id="@+id/topBar" layout="@layout/navbar_custom" />
+    <LinearLayout
+        android:id="@+id/fragmentBar"
+        android:layout_below="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+        <TextView
+            android:id="@+id/notepadFragmentButton"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/main_color_500"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Бележник"/>
+        <TextView
+            android:id="@+id/propertyViewFragmentButton"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/main_color_grey_900"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Огледи"/>
+        <TextView
+            android:id="@+id/searchFragmentButton"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/main_color_grey_900"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Търсения"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fragment_main"
+        android:layout_below="@+id/fragmentBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--<fragment-->
+        <!--android:name="fragments.PropertiesViewsFragment"-->
+        <!--android:id="@+id/fragment_main"-->
+        <!--android:layout_below="@+id/topBar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+</RelativeLayout>

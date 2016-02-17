@@ -1,0 +1,140 @@
+<resources>
+    <string name="app_name">LocalEstates</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="cd_main_image">main image</string>
+
+    <string name="material_icon_box_full">&#xe86b;</string>
+    <string name="material_icon_checked_full">&#xe86f;</string>
+    <string name="material_icon_check_empty">&#xe86a;</string>
+    <string name="material_icon_check_full">&#xe86e;</string>
+    <string name="material_icon_note">&#xea23;</string>
+    <string name="material_icon_headphones">&#xe9b1;</string>
+    <string name="material_icon_human">&#xe9c5;</string>
+    <string name="material_icon_unfold_more">&#xeb2f;</string>
+    <string name="material_icon_undo">&#xeb2c;</string>
+    <string name="fontello_heart_empty">&#xe9b5;</string>
+    <string name="fontello_heart_full">&#xe9b6;</string>
+
+    <string name="sell_text">Продава</string>
+    <string name="rent_text">Дава под наем</string>
+
+    <string name="fontello_user">&#xe81b;</string>
+    <string name="all_text">Всички</string>
+    <string name="from">ОТ</string>
+    <string name="to">ДО</string>
+
+    <string-array name="town">
+        <item>Всички</item>
+        <item>град Благоевград</item>
+        <item>област Благоевград</item>
+        <item>град Бургас</item>
+        <item>област Бургас</item>
+        <item>град Варна</item>
+        <item>област Варна</item>
+        <item>град Велико Търново</item>
+        <item>област Велико Търново</item>
+        <item>град Видин</item>
+        <item>област Видин</item>
+        <item>град Враца</item>
+        <item>област Враца</item>
+        <item>град Габрово</item>
+        <item>област Габрово</item>
+        <item>град Добрич</item>
+        <item>област Добрич</item>
+        <item>град Кърджали</item>
+        <item>област Кърджали</item>
+        <item>град Кюстендил</item>
+        <item>област Кюстендил</item>
+        <item>град Ловеч</item>
+        <item>област Ловеч</item>
+        <item>град Монтана</item>
+        <item>област Монтана</item>
+        <item>град Пазарджик</item>
+        <item>област Пазарджик</item>
+        <item>град Перник</item>
+        <item>област Перник</item>
+        <item>град Плевен</item>
+        <item>област Плевен</item>
+        <item>град Пловдив</item>
+        <item>област Пловдив</item>
+        <item>град Разград</item>
+        <item>област Разград</item>
+        <item>град Русе</item>
+        <item>област Русе</item>
+        <item>град Силистра</item>
+        <item>област Силистра</item>
+        <item>град Сливен</item>
+        <item>област Сливен</item>
+        <item>град Смолян</item>
+        <item>област Смолян</item>
+        <item>град София</item>
+        <item>област София</item>
+        <item>град Стара Загора</item>
+        <item>област Стара Загора</item>
+        <item>град Търговище</item>
+        <item>област Търговище</item>
+        <item>град Хасково</item>
+        <item>област Хасково</item>
+        <item>град Шумен</item>
+        <item>област Шумен</item>
+        <item>град Ямбол</item>
+        <item>област Ямбол</item>
+    </string-array>
+
+    <string-array name="sortValues">
+        <item>Вид/Район/Цена</item>
+        <item>Най-новите обяви</item>
+        <item>Цена</item>
+        <item>Цена на кв.м</item>
+    </string-array>
+
+    <string-array name="sell_property_types">
+        <item>ВСИЧКИ</item>
+        <item>1-СТАЕН</item>
+        <item>2-СТАЕН</item>
+        <item>3-СТАЕН</item>
+        <item>4-СТАЕН</item>
+        <item>МНОГОСТАЕН</item>
+        <item>МЕЗОНЕТ</item>
+        <item>АТЕЛИЕ ТАВАН</item>
+        <item>ОФИС</item>
+        <item>МАГАЗИН</item>
+        <item>ЗАВЕДЕНИЕ</item>
+        <item>СКЛАД</item>
+        <item>ПРОМ. ПОМЕЩЕНИЕ</item>
+        <item>ХОТЕЛ</item>
+        <item>ЕТАЖ ОТ КЪЩА</item>
+        <item>КЪЩА</item>
+        <item>ВИЛА</item>
+        <item>ПАРЦЕЛ</item>
+        <item>ГАРАЖ</item>
+        <item>ЗЕМЕДЕЛСКА ЗЕМЯ</item>
+    </string-array>
+
+    <string-array name="rent_property_types">
+        <item>ВСИЧКИ</item>
+        <item>СТАЯ</item>
+        <item>1-СТАЕН</item>
+        <item>2-СТАЕН</item>
+        <item>3-СТАЕН</item>
+        <item>4-СТАЕН</item>
+        <item>МНОГОСТАЕН</item>
+        <item>МЕЗОНЕТ</item>
+        <item>АТЕЛИЕ ТАВАН</item>
+        <item>ОФИС</item>
+        <item>МАГАЗИН</item>
+        <item>ЗАВЕДЕНИЕ</item>
+        <item>СКЛАД</item>
+        <item>ПРОМ. ПОМЕЩЕНИЕ</item>
+        <item>ХОТЕЛ</item>
+        <item>ЕТАЖ ОТ КЪЩА</item>
+        <item>КЪЩА</item>
+        <item>ВИЛА</item>
+        <item>МЯСТО</item>
+        <item>ГАРАЖ</item>
+        <item>ЗЕМЕДЕЛСКА ЗЕМЯ</item>
+    </string-array>
+
+</resources>

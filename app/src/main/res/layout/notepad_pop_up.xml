@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/separator0"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey_300" />
+
+                <utils.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_500"
+                    android:textSize="16sp"
+                    android:text="Обява:"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/separator5"
+                android:layout_below="@+id/separator0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <utils.RobotoTextView
+                    android:id="@+id/titleAdvert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_grey_900"
+                    android:textSize="16sp"
+                    app:typeface="robotoLight" />
+
+
+                <utils.MaterialRippleLayout
+                    android:id="@+id/openAdvert"
+                    style="@style/RippleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    app:rippleColor="@color/main_color_grey_400" >
+
+                    <utils.RobotoTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:layout_gravity="right"
+                        android:background="@drawable/selector_expandable_shop"
+                        android:gravity="center"
+                        android:minHeight="36dp"
+                        android:minWidth="64dp"
+                        android:text="Виж обявата"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        app:typeface="robotoMedium" />
+                </utils.MaterialRippleLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/separator1"
+                android:layout_below="@+id/separator5"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey_300" />
+
+                <utils.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_500"
+                    android:textSize="16sp"
+                    android:text="Бележка:"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/noteText"
+                android:layout_below="@id/separator1"
+                android:textColor="@color/material_lime_700"
+                android:textColorHint="@color/material_lime_900"
+                android:layout_marginLeft="20dp"
+                android:hint="Оставете бележка"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shadowColor="@color/main_color_500"
+                android:lines="5"
+                android:minLines="5"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:id="@+id/separator2"
+                android:layout_below="@+id/noteText"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey_300" />
+
+                <utils.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_500"
+                    android:textSize="16sp"
+                    android:text="Дата на добавяне:"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+
+            <utils.RobotoTextView
+                android:id="@+id/timeAdded"
+                android:layout_below="@+id/separator2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/main_color_grey_900"
+                android:textSize="16sp"
+                app:typeface="robotoLight" />
+
+
+            <LinearLayout
+                android:id="@+id/separator3"
+                android:layout_below="@+id/timeAdded"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey_300" />
+
+                <utils.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_500"
+                    android:textSize="16sp"
+                    android:text="Местоположение на обекта:"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mapOptionsBar"
+                android:layout_below="@id/separator3"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <utils.MaterialRippleLayout
+                    android:id="@+id/mapBar"
+                    style="@style/RippleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    app:rippleColor="@color/main_color_grey_400" >
+
+                    <LinearLayout
+                        android:id="@+id/columnMap1"
+                        android:background="@color/white"
+                        android:layout_below="@id/placeLabel"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/mapImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_location_on_black_24dp"
+                            android:backgroundTint="@color/material_lime_900"/>
+
+                        <utils.RobotoTextView
+                            android:id="@+id/showMap"
+                            style="@style/ButtonStyle.RaisedEmpty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0dp"
+                            android:background="@color/white"
+                            android:minWidth="112dp"
+                            android:text="Карта"
+                            android:textColor="@color/material_lime_900" />
+                    </LinearLayout>
+
+                </utils.MaterialRippleLayout>
+
+                <utils.MaterialRippleLayout
+                    android:id="@+id/mapNavBar"
+                    style="@style/RippleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    app:rippleColor="@color/main_color_grey_400" >
+
+                    <LinearLayout
+                        android:id="@+id/columnMap2"
+                        android:background="@color/white"
+                        android:layout_below="@id/placeLabel"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/mapNavImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_navigation_black_24dp"
+                            android:backgroundTint="@color/material_lime_900"/>
+
+                        <utils.RobotoTextView
+                            android:id="@+id/showNavMap"
+                            style="@style/ButtonStyle.RaisedEmpty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0dp"
+                            android:background="@color/white"
+                            android:minWidth="112dp"
+                            android:text="Навигация"
+                            android:textColor="@color/material_lime_900" />
+                    </LinearLayout>
+
+                </utils.MaterialRippleLayout>
+
+                <utils.MaterialRippleLayout
+                    android:id="@+id/mapStreetViewBar"
+                    style="@style/RippleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    app:rippleColor="@color/main_color_grey_400" >
+
+                    <LinearLayout
+                        android:id="@+id/columnMap3"
+                        android:background="@color/white"
+                        android:layout_below="@id/placeLabel"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/mapStreetViewImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_directions_run_black_24dp"
+                            android:backgroundTint="@color/material_lime_900"/>
+
+                        <utils.RobotoTextView
+                            android:id="@+id/showStreetViewMap"
+                            style="@style/ButtonStyle.RaisedEmpty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0dp"
+                            android:background="@color/white"
+                            android:minWidth="112dp"
+                            android:text="Гледка от място"
+                            android:textColor="@color/material_lime_900" />
+                    </LinearLayout>
+
+                </utils.MaterialRippleLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/separator4"
+                android:layout_below="@+id/mapOptionsBar"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/material_grey_300" />
+
+                <utils.RobotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_500"
+                    android:textSize="16sp"
+                    android:text="Обнови съдържанието на обявата:"
+                    app:typeface="robotoLight" />
+            </LinearLayout>
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/progressBar"
+                android:layout_below="@+id/separator4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                app:background_progressbar_color="@color/main_color_grey_400"
+                app:background_progressbar_width="5dp"
+                app:progressbar_color="@color/main_color_500"
+                app:progressbar_width="10dp" />
+
+            <utils.MaterialRippleLayout
+                android:id="@+id/updateAdvert"
+                android:layout_below="@+id/progressBar"
+                style="@style/RippleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                app:rippleColor="@color/main_color_grey_400" >
+
+                <utils.RobotoTextView
+                    android:id="@+id/updatedAdvertText"
+                    android:layout_below="@+id/separator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/main_color_grey_900"
+                    android:textSize="16sp"
+                    android:text="Обнови обявата"
+                    app:typeface="robotoLight" />
+            </utils.MaterialRippleLayout>
+
+            <LinearLayout
+                android:id="@+id/contentLine"
+                android:layout_below="@id/updateAdvert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:background="@drawable/google_cards_background_bottom" >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/main_color_500" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right" >
+
+                    <utils.RobotoTextView
+                        android:id="@+id/dialPhoneNoteDialog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/transparent_button_selector"
+                        android:padding="8dp"
+                        android:text="Позвъни"
+                        android:textColor="@color/material_red_700"
+                        android:textSize="14sp"
+                        app:typeface="robotoMedium" />
+
+                    <utils.RobotoTextView
+                        android:id="@+id/saveNoteDialog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/transparent_button_selector"
+                        android:padding="8dp"
+                        android:text="Запази"
+                        android:textColor="@color/main_color_500"
+                        android:textSize="14sp"
+                        app:typeface="robotoMedium" />
+
+                    <utils.RobotoTextView
+                        android:id="@+id/closeNoteDialog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/transparent_button_selector"
+                        android:padding="8dp"
+                        android:text="Затвори"
+                        android:textColor="@color/main_color_500"
+                        android:textSize="14sp"
+                        app:typeface="robotoMedium" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
