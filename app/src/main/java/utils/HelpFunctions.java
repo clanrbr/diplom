@@ -333,6 +333,51 @@ public class HelpFunctions {
         return buildUrl;
     }
 
+
+    public static String convertSearchToString(ArrayList<HashMap<String,String>> values) {
+        String buildUrl="";
+        for (int y=0;y<values.size();y++) {
+            HashMap<String,String> hashMapValues=values.get(y);
+            if (hashMapValues!=null) {
+                for (Map.Entry me : hashMapValues.entrySet()) {
+                    buildUrl+=me.getKey().toString()+"="+me.getValue().toString()+"&";
+                }
+            }
+        }
+        if ( !buildUrl.equals("") ) {
+            buildUrl = buildUrl.substring(0, buildUrl.length()-1);
+        }
+
+        return buildUrl;
+    }
+
+    public static ArrayList<HashMap<String,String>> convertStringToHashSaearch(String values) {
+        ArrayList<HashMap<String,String>> result = new ArrayList<>();
+        if (values.length()>0) {
+            String[] hashValues = values.split("&");
+            if (hashValues.length>0) {
+                for (int i=0;i<hashValues.length;i++) {
+                    String key = "";
+                    String value= "";
+                    String[] hashParts = hashValues[i].split("=");
+                    if (hashParts.length==1) {
+                        key=hashParts[0];
+                        value="";
+                    } else if (hashParts.length==2) {
+                        key=hashParts[0];
+                        value=hashParts[1];
+                    }
+
+                    HashMap<String,String> hashGroup =  new HashMap<>();
+                    hashGroup.put(key,value);
+                    result.add(hashGroup);
+                }
+            }
+        }
+
+        return result;
+    }
+
     public static View loadCorrectView(Activity context,int groupNumber) {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View optionView;

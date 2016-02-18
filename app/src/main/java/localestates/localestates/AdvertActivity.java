@@ -331,12 +331,12 @@ public class AdvertActivity extends AppCompatActivity implements ObservableScrol
         switch (requestCode) {
             case LocalEstateConstants.MY_PEMISSION_PHONE_CODE: {
                 if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                    PackageManager pm = getPackageManager();
-//                    if ( pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY) ) {
+                    PackageManager pm = getPackageManager();
+                    if ( pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY) ) {
                         callActionFunction();
-//                    } else {
-//                        Toast.makeText(this,"Обаждането изисква разрешение",Toast.LENGTH_LONG).show();
-//                    }
+                    } else {
+                        Toast.makeText(this,"Обаждането изисква разрешение",Toast.LENGTH_LONG).show();
+                    }
                 }
                 break;
             }
@@ -384,7 +384,8 @@ public class AdvertActivity extends AppCompatActivity implements ObservableScrol
 
     @Override
     public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
-        int baseColor = getResources().getColor(R.color.main_color_500);
+        int baseColor = ContextCompat.getColor(AdvertActivity.this, R.color.main_color_500);
+//        int baseColor = getResources().getColor(R.color.main_color_500);
         float alpha = Math.min(1, (float) scrollY / mParallaxImageHeight);
         mToolbarView.setBackgroundColor(ScrollUtils.getColorWithAlpha(alpha, baseColor));
         ViewHelper.setTranslationY(mImageView, scrollY / 2);

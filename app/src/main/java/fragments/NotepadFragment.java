@@ -198,7 +198,6 @@ public class NotepadFragment extends Fragment {
                 dialPhoneNoteDialog.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        getActivity().checkSelfPermission(Manifest.permission.CALL_PHONE);
                         if ( PackageManager.PERMISSION_GRANTED == ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) ) {
                             PackageManager pm = getActivity().getPackageManager();
                             if ( pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY) ) {
@@ -207,7 +206,6 @@ public class NotepadFragment extends Fragment {
                                 Toast.makeText(getContext(),"Няма как да наберете този номер",Toast.LENGTH_LONG).show();
                             }
                         } else {
-//                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, LocalEstateConstants.MY_PEMISSION_PHONE_CODE);
                             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE}, LocalEstateConstants.MY_PEMISSION_PHONE_CODE);
                         }
                     }

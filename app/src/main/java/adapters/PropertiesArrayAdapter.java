@@ -2,6 +2,7 @@ package adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,13 +40,16 @@ public class PropertiesArrayAdapter extends ArrayAdapter<JSONObject> {
 
     public View getView(int position, View convertView, ViewGroup parent) {
         final JSONObject property = getItem(position);
-
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.property_single_item, parent, false);
         }
 
         TextView propertyTitle = (TextView) convertView.findViewById(R.id.propertyTitle);
+        TextView propertyCity = (TextView) convertView.findViewById(R.id.propertyCity);
+        TextView propertyNeighborhood = (TextView) convertView.findViewById(R.id.propertyNeighborhood);
+//        TextView propertyStreet = (TextView) convertView.findViewById(R.id.propertyStreet);
+        TextView propertySize = (TextView) convertView.findViewById(R.id.propertySize);
         TextView propertyPrice = (TextView) convertView.findViewById(R.id.propertyPrice);
 
         ImageView bigImage = (ImageView) convertView.findViewById(R.id.bigImage);
@@ -91,12 +95,7 @@ public class PropertiesArrayAdapter extends ArrayAdapter<JSONObject> {
             } else {
                 Picasso.with(context).load(R.drawable.noproperty).placeholder(R.drawable.noproperty).error(R.drawable.noproperty).into(bigImage);
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
-
-        try {
             if (property.has("type_home")) {
                 String type_home=property.getString("type_home");
                 if ( type_home!=null ) {
@@ -109,59 +108,48 @@ public class PropertiesArrayAdapter extends ArrayAdapter<JSONObject> {
                     }
                 }
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
-        try {
             if (property.has("town")) {
                 String town=property.getString("town");
                 if ( town!=null ) {
-                    propertyTitle.setText(propertyTitle.getText()+" "+town);
+                    propertyCity.setText(town);
+                } else {
+                    propertyCity.setVisibility(View.GONE);
                 }
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
-        try {
             if (property.has("raion")) {
                 String raion=property.getString("raion");
+
+                if (property.has("street")) {
+                    String street=property.getString("street");
+                    if ( street!=null ) {
+                        raion=raion+ " "+street;
+                    }
+                }
+
                 if ( raion!=null ) {
-                    propertyTitle.setText(propertyTitle.getText()+" "+raion);
+                    propertyNeighborhood.setText(raion);
+                } else {
+                    propertyNeighborhood.setVisibility(View.GONE);
                 }
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
-        try {
-            if (property.has("street")) {
-                String street=property.getString("street");
-                if ( street!=null ) {
-                    propertyTitle.setText(propertyTitle.getText()+" "+street);
+            if ( property.has("quadrature") && property.has("metric") ) {
+                String size=property.getString("quadrature")+" " + property.getString("metric");
+                if ( size!=null ) {
+                    propertySize.setText(size);
                 }
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
-        try {
             if (property.has("price")) {
                 String price=property.getString("price");
+                if (property.has("currency")) {
+                    price=price+" " +property.getString("currency");
+                }
+
                 if ( price!=null ) {
                     propertyPrice.setText(price);
-                }
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            if (property.has("currency")) {
-                String currency=property.getString("currency");
-                if ( currency!=null ) {
-                    propertyPrice.setText(propertyPrice.getText()+" "+currency);
                 }
             }
         } catch (JSONException e) {

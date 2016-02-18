@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import fragments.NotepadFragment;
 import fragments.PropertiesViewsFragment;
+import fragments.SearchFragment;
 
 /**
  * Created by macbook on 2/12/16.
@@ -110,11 +111,11 @@ public class FavouriteActivity extends AppCompatActivity {
         searchFragmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                notepadFragmentButton.setTextColor(ContextCompat.getColor(FavouriteActivity.this, R.color.main_color_grey_900));
-//                propertyViewFragmentButton.setTextColor(ContextCompat.getColor(FavouriteActivity.this, R.color.main_color_grey_900));
-//                searchFragmentButton.setTextColor(ContextCompat.getColor(FavouriteActivity.this, R.color.main_color_500));
-//                fragment = PropertiesViewsFragment.newInstance();
-//                commitFragment(fragment);
+                notepadFragmentButton.setTextColor(ContextCompat.getColor(FavouriteActivity.this, R.color.main_color_grey_900));
+                propertyViewFragmentButton.setTextColor(ContextCompat.getColor(FavouriteActivity.this, R.color.main_color_grey_900));
+                searchFragmentButton.setTextColor(ContextCompat.getColor(FavouriteActivity.this, R.color.main_color_500));
+                fragment = SearchFragment.newInstance();
+                commitFragment(fragment);
             }
         });
 

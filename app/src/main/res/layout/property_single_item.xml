@@ -74,6 +74,42 @@
                     android:src="@drawable/noproperty"
                     android:scaleType="centerCrop" />
             </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp">
+                <utils.RobotoTextView
+                    android:id="@+id/propertyTitle"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/main_color_grey_800"
+                    android:textSize="14sp"
+                    custom:typeface="robotoLight" />
+                <utils.RobotoTextView
+                    android:id="@+id/propertyCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/main_color_grey_800"
+                    android:textSize="12sp"
+                    custom:typeface="robotoLight" />
+                <utils.RobotoTextView
+                    android:id="@+id/propertyNeighborhood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/main_color_grey_800"
+                    android:textSize="12sp"
+                    custom:typeface="robotoLight" />
+                <utils.RobotoTextView
+                    android:id="@+id/propertySize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/main_color_grey_800"
+                    android:textSize="12sp"
+                    custom:typeface="robotoLight" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,19 +120,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="16dp"
-                    android:paddingTop="12dp" >
-
-                    <utils.RobotoTextView
-                        android:id="@+id/propertyTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="Product Name"
-                        android:textColor="@color/main_color_grey_800"
-                        android:textSize="14sp"
-                        custom:typeface="robotoLight" />
-                    <!--android:maxLines="5"-->
+                    android:paddingTop="8dp"
+                    android:paddingLeft="16dp">
 
                     <utils.RobotoTextView
                         android:id="@+id/propertyPrice"

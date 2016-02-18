@@ -35,22 +35,52 @@
                 android:textColor="#fff" />
         </utils.MaterialRippleLayout>
 
+        <utils.MaterialRippleLayout
+            style="@style/RippleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            custom:rippleColor="@color/main_color_grey_400" >
+
+            <utils.RobotoTextView
+                android:id="@+id/saveSearchNotepadButton"
+                style="@style/ButtonStyle.RaisedEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:background="@color/main_color_500"
+                android:minWidth="112dp"
+                android:text="Запази търсенето"
+                android:textColor="#fff" />
+        </utils.MaterialRippleLayout>
+
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/searchTextHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone">
-        <utils.RobotoTextView
-            android:id="@+id/resultTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/main_color_500"
-            android:textSize="8sp"
-            custom:typeface="robotoLight" />
+        android:visibility="gone"
+        android:orientation="vertical">
+            <utils.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/main_color_grey_900"
+                android:textSize="12sp"
+                android:text="Търсене за:"
+                custom:typeface="robotoLight" />
+            <utils.RobotoTextView
+                android:id="@+id/resultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/main_color_500"
+                android:textSize="10sp"
+                custom:typeface="robotoLight" />
     </LinearLayout>
     <ListView
         android:id="@+id/listView"

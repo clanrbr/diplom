@@ -900,7 +900,6 @@ public class AdvanceSearchActivity extends ActionBarActivity implements
     @Override
     public void processFinish(String output, String numberOfAdverts, String searchText) {
         progressBar.setVisibility(View.GONE);
-//        scrollView.setVisibility(View.VISIBLE);
         Intent searchResultIntent = new Intent(AdvanceSearchActivity.this,SearchResultActivity.class);
         searchResultIntent.putExtra("results",output);
         searchResultIntent.putExtra("results_text",searchText);

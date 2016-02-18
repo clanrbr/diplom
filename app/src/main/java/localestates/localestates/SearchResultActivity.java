@@ -1,27 +1,48 @@
 package localestates.localestates;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
+import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
+import com.raizlabs.android.dbflow.annotation.Column;
+import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 
 import adapters.PropertiesArrayAdapter;
+import db.PropertyVisits;
+import db.PropertyVisits_Table;
+import db.SearchNotepad;
 import interfaces.AsyncResponse;
 import listeners.InfiniteScrollListener;
 import localEstatesHttpRequests.MakeASearchHttpRequest;
@@ -38,7 +59,9 @@ public class SearchResultActivity extends ActionBarActivity implements AsyncResp
     private ListView listView;
     private PropertiesArrayAdapter adapterProperties;
     private TextView resultTextView;
+    private LinearLayout searchTextHolder;
     private TextView editSearchButton;
+    private TextView saveSearchNotepadButton;
     private ArrayList<HashMap<String,String>> searchValues;
     private MakeASearchHttpRequest asyncTask;
 
@@ -110,6 +133,56 @@ public class SearchResultActivity extends ActionBarActivity implements AsyncResp
             }
         });
 
+        saveSearchNotepadButton = (TextView) findViewById(R.id.saveSearchNotepadButton);
+        saveSearchNotepadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ( searchValues!=null ) {
+                    final String criteriaInString = HelpFunctions.convertSearchToString(searchValues);
+
+                    final Dialog dialog=new Dialog(SearchResultActivity.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar);
+                    dialog.setContentView(R.layout.notepad_search_add_pop_up);
+                    final EditText titleSearch = (EditText) dialog.findViewById(R.id.titleSearch);
+                    final EditText noteText = (EditText) dialog.findViewById(R.id.noteText);
+                    TextView saveAppDialog = (TextView) dialog.findViewById(R.id.saveSearchDialog);
+                    TextView closeAppointmentDialog = (TextView) dialog.findViewById(R.id.closeSearchDialog);
+
+                    // Check if no view has focus:
+                    dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+                    saveAppDialog.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if ( criteriaInString.length()>0 ) {
+                                long unixTime = System.currentTimeMillis() / 1000L;
+                                SearchNotepad searchNotepad = new SearchNotepad();
+                                searchNotepad.search_title=titleSearch.getText().toString();
+                                searchNotepad.search_content=criteriaInString;
+                                searchNotepad.search_note=noteText.getText().toString();
+                                searchNotepad.search_text_help_text=searchText;
+                                searchNotepad.search_add_time=unixTime;
+                                searchNotepad.save();
+                                Toast.makeText(SearchResultActivity.this,"Търсенето беше успешно добавено в бележника!",Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(SearchResultActivity.this,"Възникна грешка!",Toast.LENGTH_LONG).show();
+                            }
+
+                            dialog.dismiss();
+                        }
+                    });
+
+                    closeAppointmentDialog.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                }
+            }
+        });
+
         Bundle extras = getIntent().getExtras();
         if(extras == null) {
             results = null;
@@ -124,7 +197,7 @@ public class SearchResultActivity extends ActionBarActivity implements AsyncResp
                 JSONArray jsonArray = null;
                 try {
                     jsonArray = new JSONArray(results);
-                    if (jsonArray != null) {
+                    if (jsonArray.length()>0) {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             if (jsonArray.getJSONObject(i) != null) {
                                 this.results.add(jsonArray.getJSONObject(i));
@@ -142,6 +215,8 @@ public class SearchResultActivity extends ActionBarActivity implements AsyncResp
         asyncTask = new MakeASearchHttpRequest(progressBar,0);
         asyncTask.delegate = this;
 
+        resultTextView = (TextView) findViewById(R.id.resultTextView);
+        searchTextHolder = (LinearLayout) findViewById(R.id.searchTextHolder);
         listView = (ListView) findViewById(R.id.listView);
         if (results!=null) {
             adapterProperties = new PropertiesArrayAdapter(getBaseContext(),R.layout.property_single_item, results);
@@ -191,9 +266,10 @@ public class SearchResultActivity extends ActionBarActivity implements AsyncResp
             }
         });
 
-        if ( (searchText!=null) && (searchText!="") ) {
-            resultTextView= (TextView) findViewById(R.id.resultTextView);
+        if ( (searchText!=null) && (!searchText.equals("") ) ) {
+            Log.e("HEREHERE",searchText);
             resultTextView.setText(searchText);
+            searchTextHolder.setVisibility(View.VISIBLE);
         }
     }
 
@@ -204,7 +280,7 @@ public class SearchResultActivity extends ActionBarActivity implements AsyncResp
             JSONArray jsonArray = null;
             try {
                 jsonArray = new JSONArray(output);
-                if (jsonArray != null) {
+                if (jsonArray.length()>0) {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         if (jsonArray.getJSONObject(i) != null) {
                             moreResults.add(jsonArray.getJSONObject(i));
