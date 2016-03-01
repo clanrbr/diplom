@@ -7,11 +7,8 @@ import java.io.Serializable;
 import java.net.HttpCookie;
 
 /**
- * A simple wrapper for {@link HttpCookie} to work with {@link SiCookieStore2}
- * Gives power of serialization-deserialization to {@link HttpCookie}
- * @author Manish
- *
- */
+ * Created by macbook on 1/19/16.
+ **/
 public class SICookie2 implements Serializable {
 
     private HttpCookie mHttpCookie;

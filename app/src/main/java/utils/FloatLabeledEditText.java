@@ -33,7 +33,7 @@ import android.widget.TextView;
 import localestates.localestates.R;
 
 /**
- * Created by SemonCat on 2014/6/2.
+ * Created by macbook on 1/19/16.
  */
 public class FloatLabeledEditText extends LinearLayout {
 

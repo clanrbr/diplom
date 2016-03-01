@@ -26,11 +26,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Implementation of {@link CookieStore} for persistence cookies, uses shared
- * preference for storing cookies.
- *
- * @author Manish
- *
+ Created by macbook on 1/19/16.
  */
 public class SiCookieStore2 implements CookieStore {
     private static final String LOG_TAG = "SICookieStore2";
