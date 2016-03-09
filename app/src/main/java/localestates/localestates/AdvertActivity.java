@@ -823,8 +823,10 @@ public class AdvertActivity extends AppCompatActivity implements ObservableScrol
             if ( advertInto.has("quadrature") ) {
                 String value = advertInto.getString("quadrature");
 
-                int averagePrice=Math.round(Integer.parseInt(price)/Integer.parseInt(value));
-                roundNumber.setText(String.valueOf(averagePrice)+" EUR/ кв.м.");
+                if (!price.contains("Цена")) {
+                    int averagePrice=Math.round(Integer.parseInt(price)/Integer.parseInt(value));
+                    roundNumber.setText(String.valueOf(averagePrice)+" EUR/ кв.м.");
+                }
 
                 if ( advertInto.has("metric") ) {
                     value=value +" "+ advertInto.getString("metric");

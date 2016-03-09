@@ -192,42 +192,42 @@ public class StartActivity extends AppCompatActivity {
 
 
 
-        HTTPPostLogin getLogin = new HTTPPostLogin(progressBar) {
-            @Override
-            protected void onPostExecute(String result) {
-                progressBar.setVisibility(View.GONE);
-                if (result != null) {
-                    Log.e("HEREHERE",result);
-                } else {
-                    Log.e("HEREHERE", "EMPTY");
-                }
-            }
-
-            @Override
-            protected void onProgressUpdate(Integer... values) {
-                progressBar.setProgress(values[0]);
-            }
-        };
-        getLogin.execute("http://api.imot.bg/mobile_api/users/login");
-
-
-        HTTPGETCheckForLogIn checkLogin = new HTTPGETCheckForLogIn(progressBar) {
-            @Override
-            protected void onPostExecute(String result) {
-                progressBar.setVisibility(View.GONE);
-                if (result != null) {
-                    Log.e("HEREHERE",result);
-                } else {
-                    Log.e("HEREHERE", "EMPTY");
-                }
-            }
-
-            @Override
-            protected void onProgressUpdate(Integer... values) {
-                progressBar.setProgress(values[0]);
-            }
-        };
-        checkLogin.execute("http://api.imot.bg/mobile_api/users");
+//        HTTPPostLogin getLogin = new HTTPPostLogin(progressBar) {
+//            @Override
+//            protected void onPostExecute(String result) {
+//                progressBar.setVisibility(View.GONE);
+//                if (result != null) {
+//                    Log.e("HEREHERE",result);
+//                } else {
+//                    Log.e("HEREHERE", "EMPTY");
+//                }
+//            }
+//
+//            @Override
+//            protected void onProgressUpdate(Integer... values) {
+//                progressBar.setProgress(values[0]);
+//            }
+//        };
+//        getLogin.execute("http://api.imot.bg/mobile_api/users/login");
+//
+//
+//        HTTPGETCheckForLogIn checkLogin = new HTTPGETCheckForLogIn(progressBar) {
+//            @Override
+//            protected void onPostExecute(String result) {
+//                progressBar.setVisibility(View.GONE);
+//                if (result != null) {
+//                    Log.e("HEREHERE",result);
+//                } else {
+//                    Log.e("HEREHERE", "EMPTY");
+//                }
+//            }
+//
+//            @Override
+//            protected void onProgressUpdate(Integer... values) {
+//                progressBar.setProgress(values[0]);
+//            }
+//        };
+//        checkLogin.execute("http://api.imot.bg/mobile_api/users");
     }
 
 //    @Override

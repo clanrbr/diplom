@@ -144,8 +144,13 @@ public class PropertiesArrayAdapter extends ArrayAdapter<JSONObject> {
 
             if (property.has("price")) {
                 String price=property.getString("price");
-                if (property.has("currency")) {
-                    price=price+" " +property.getString("currency");
+                if ( price.contains("Цена") ) {
+                    propertyPrice.setTextSize(12);
+                } else {
+                    propertyPrice.setTextSize(20);
+                    if (property.has("currency")) {
+                        price=price+" " +property.getString("currency");
+                    }
                 }
 
                 if ( price!=null ) {
